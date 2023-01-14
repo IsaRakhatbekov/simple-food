@@ -34,6 +34,10 @@ $(function() {
     $('body').toggleClass('lock')
   });
   
+  $('.mobile-menu__burger').on('click', function(){
+    $('.mobile-menu').removeClass('mobile-menu--active');
+    $('body').removeClass('lock')
+  });
 
 })
 var mixer = mixitup('.popular__items');	
