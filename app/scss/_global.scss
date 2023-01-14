@@ -1,0 +1,125 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Rubik";
+  font-weight: 400;
+  display: flex;
+  color: #31352B;
+  flex-direction: column;
+  background-color: #F9FAFF;
+}
+
+.lock {
+  overflow-y: hidden;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, 0.5);
+  }
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1200px;
+}
+
+.section {
+  padding: 60px 0;
+
+
+  @include mq('tablet') {
+    padding: 50px 0;
+  }
+
+  @include mq('phone') {
+    padding: 20px 0;
+  }
+}
+
+.logo {
+  transition: opacity 0.3s;
+
+  &:focus {
+    border-radius: 5px;
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+  }
+  
+  &:hover {
+    opacity: 0.8;
+  }
+  
+  &:active {
+    opacity:  0.5;
+  }
+}
+
+.animation {
+  transition: color 0.3s;
+}
+
+.animation:focus {
+  border-radius: 5px;
+  box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+}
+
+.animation:hover {
+  color: $active__color;
+}
+
+.animation:active {
+  text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+}
+
+.def-btn {
+  letter-spacing: 0.03em;
+  border-radius: 6px;
+  padding: 12px 32px;
+  line-height: 130%;
+  font-size: 18px;
+  color: #fff;
+  background-color: $active__color;
+  transition: background-color 0.3s, color 0.3s, border-radius 0.3s, box-shadow 0.3s;
+
+  &:focus {
+    color: $active__color;
+    background: rgba(255, 122, 80, 0.1);
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+  }
+  
+  &:hover {
+    color: $active__color;
+    background-color: #fff;
+    box-shadow: 0 5px 12px rgba(255, 104, 56, 0.2), 0 0 0 2px rgba(255, 104, 56, 0.7);
+  }
+  
+  &:active {
+    background: rgba(255, 122, 80, 0.1);
+  }
+}
+
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

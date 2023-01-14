@@ -1,0 +1,27 @@
+$active__color: #FF6838;
+
+$silver: #ececec;
+$light-silver: #f9faff;
+
+$gray: #c2c2c2;
+
+$blue-dark: #363853;
+
+$dark: #31352B;
+
+
+
+%rubik-regular-300 {
+  font-family: 'Rubik-Light', sans-serif;
+  font-weight: 300;
+}
+
+%rubik-regular-400 {
+  font-family: 'Rubik-Regular', sans-serif;
+  font-weight: 400;
+}
+
+%rubik-regular-500 {
+  font-family: 'Rubik-Medium', sans-serif;
+  font-weight: 500;
+}
