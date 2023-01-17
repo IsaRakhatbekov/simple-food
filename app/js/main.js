@@ -3,8 +3,8 @@ $(function() {
     dots: true,
     arrows: true,
     infinite: false,
-    prevArrow: '<button type="button" class="feedback__arrow feddback__arrow-prev"><img class="feedback__svg" src="images/icons/icon-left.svg"></button>',
-    nextArrow: '<button type="button" class="feedback__arrow feddback__arrow-next"><img class="feedback__svg" src="images/icons/icon-right.svg"></button>',
+    prevArrow: '<button type="button" class="feedback__arrow feddback__arrow-prev"> <svg class="feedback__svg"><use xlink:href="images/sprite.svg#icon-left"></use></svg> </button>',
+    nextArrow: '<button type="button" class="feedback__arrow feddback__arrow-next"> <svg class="feedback__svg"><use xlink:href="images/sprite.svg#icon-right"></use></svg> </button>',
   });
 
   $(".logo, .menu__link").on("click", function (event) {
@@ -19,7 +19,6 @@ $(function() {
       $('.best__wrapper:not(.slick-initialized)').slick({
         arrows: false,
         dots: true,
-        infinite: true,
         speed: 300,
         slidesToShow: 1,
         infinite: false,
@@ -30,13 +29,21 @@ $(function() {
   });  
 
 	$('.burger').on('click', function(){
-    $('.mobile-menu').toggleClass('mobile-menu--active');
-    $('body').toggleClass('lock')
+    $('.mobile-menu').addClass('mobile-menu--active');
+    $('body').addClass('lock')
   });
   
   $('.mobile-menu__burger').on('click', function(){
     $('.mobile-menu').removeClass('mobile-menu--active');
     $('body').removeClass('lock')
+  });
+
+  $(document).mouseup(function (e){
+    const close = $(".mobile-menu");
+    if(!close.is(e.target) && close.has(e.target).length === 0) {
+      $(".mobile-menu").removeClass("mobile-menu--active");
+      $("body").removeClass("lock")
+    }
   });
 
 })

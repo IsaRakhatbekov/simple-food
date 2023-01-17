@@ -68,19 +68,19 @@ body {
 
 .animation {
   transition: color 0.3s;
-}
 
-.animation:focus {
-  border-radius: 5px;
-  box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-}
-
-.animation:hover {
-  color: $active__color;
-}
-
-.animation:active {
-  text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+  &:focus {
+    border-radius: 5px;
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+  }
+  
+  &:hover {
+    color: $active__color;
+  }
+  
+  &:active {
+    text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+  }
 }
 
 .def-btn {
@@ -109,7 +109,6 @@ body {
     background: rgba(255, 122, 80, 0.1);
   }
 }
-
 
 .sr-only {
   position: absolute;
