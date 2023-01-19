@@ -122,3 +122,51 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.breadcrumbs {
+  background-color: rgba(255, 122, 80, 0.1);
+
+  &__list {
+    display: flex;
+    align-items: center;
+    padding: 24px 0;
+
+    @include mq('phone') {
+      padding: 28px 0;
+    }
+  }
+
+  &__item {
+    color: #505050;
+    padding-right: 18px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 4px;
+      right: 3px;
+      width: 11px;
+      height: 11px;
+      opacity: 0.2;
+      background-repeat: no-repeat;
+      background-image: url('../images/sprite.svg#icon-right');
+    }
+
+    &:last-child {
+      color: $active__color;
+      padding-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    color: #505050;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+  }
+}

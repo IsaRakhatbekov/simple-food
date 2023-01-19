@@ -23,7 +23,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 5;
+    z-index: 11;
     width: 100%;
     height: 100vh;
     max-width: 300px;
@@ -191,10 +191,6 @@
     display: none;
   }
 
-  &--active {
-    display: block;
-  }
-
   &__item {
     &:not(:last-child) {
       margin-right: 45px;
@@ -205,6 +201,10 @@
     color: $dark;
     font-size: 18px;
     line-height: 1.5;
+
+    &--active {
+      color: $active__color;
+    }
   }
 }
 
@@ -597,6 +597,7 @@
   }
 
   &__title {
+    text-align: center;
     max-width: 182px;
     margin-bottom: 8px;
     line-height: 140%;
@@ -608,6 +609,7 @@
 
   &__price {
     display: block;
+    margin-top: auto;
     margin-bottom: 10px;
   }
 
@@ -887,7 +889,6 @@
     background-repeat: no-repeat;
     background-position: top left;
     background-image: url('../images/sprite.svg#icon-time');
-
     font-weight: 300;
     font-size: 18px;
     opacity: 0.9;
@@ -1540,5 +1541,587 @@
     font-size: 14px;
     line-height: 100%;
     display: inline-block;
+  }
+}
+// _______________________CATALOG PAGE_______________________
+.catalog {
+  padding-bottom: 44px;
+
+  @include mq('phone') {
+    padding-bottom: 27px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 56px 0;
+
+    @include mq('phone') {
+      display: block;
+      padding: 48px 0 34px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    color: $blue-dark;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.3;
+
+    @include mq('tablet') {
+      font-size: 31px;
+    }
+
+    @include mq('phone') {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+
+    @include mq('tablet') {
+      justify-content: center;
+    }
+  }  
+
+  &__content {
+    max-width: 870px;
+  }
+
+  &__items {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 67px;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+
+    @include mq('laptop') {
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mq('phone') {
+      margin-bottom: 36px;
+      gap: 13px 5px;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .jq-selectbox__select {
+    letter-spacing: 0.03em;
+    font-size: 14px;
+    color: $blue-dark;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    background: transparent;
+      
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  .jq-selectbox__trigger {
+    border-left: none;
+  }
+
+  .jq-selectbox__trigger-arrow {
+    position: absolute;
+    opacity: 0.5;
+    top: 12px;
+    right: 12px;
+    width: 10px;
+    height: 10px;
+    border: none;
+    background-image: url('../images/sprite.svg#icon-right');
+    transform: rotate(90deg);
+  }
+}
+
+.catalog-carts {
+
+  &__img {
+
+    @include mq('phone') {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__title {
+
+    @include mq('phone') {
+      margin-bottom: 11px;
+    }
+  }
+
+  &__price {
+
+    @include mq('phone') {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__btn {
+
+    @include mq('phone') {
+      padding: 8px 19px;
+    }
+  }
+}
+
+.open-filter {
+  display: none;
+
+  &__btn  {
+    display: none;
+    width: 53px;
+    height: 54px;
+    background-color: #FAEDED;
+    margin-right: 22px;
+
+    @include mq('phone') {
+      display: block;
+    }
+  }
+
+  &__svg {
+    fill: $active__color;
+  }
+
+  &__top {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__close {
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FAEDED;
+  }
+
+  &--active {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    width: 100%;
+    height: 100vh;
+    max-width: 300px;
+    overflow-y: auto;
+    padding: 0 26px 0  15px;
+    background-color: $white;
+  }
+}
+
+.sidebar {
+  width: 100%;
+  max-width: 270px;
+  margin-right: 10px;
+
+  @include mq('desktop') {
+    max-width: 245px;
+  }
+
+  @include mq('tablet') {
+    display: none;
+  }
+
+  &__bloks {
+    max-width: 100%;
+    border-radius: 5px;
+    background-color: $white;
+    border: 1px solid #ECECEC;
+    padding: 15px 15px 9px 15px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      border-bottom: 1px solid #ECECEC;
+      width: 100%;
+      top: 58px;
+      left: 0;
+    }
+
+    &:not(:last-child){
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
+    letter-spacing: 0.03em;
+    padding-bottom: 15px;
+    line-height: 120%;
+    font-size: 24px;
+    color: $blue-dark;
+  }
+
+  &__nav {
+    padding: 25px 0 0 0;
+  }
+
+  &__item {
+    margin-bottom: 12px;
+  }
+
+  &__link {
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+    color: $dark;
+
+    &--active {
+      color: $active__color;
+    }
+  }
+
+  &__checkbox-wrapper{
+    padding-top: 25px;
+  }
+
+  &__checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    color: $dark;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      border: 1px solid $gray;
+      background-color: #FAEDED;
+      border-radius: 3px;
+      margin-right: 10px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 50% 50%;
+    }
+  }
+
+  &__checkbox:checked + .sidebar__label::before {
+    border-color: #000;
+    background-color: #FAEDED;
+    background-image: url('../images/sprite.svg#icon-checked');
+  }
+
+  &__checkbox:not(:disabled):not(:checked) + .sidebar__label:hover::before {
+    border-color: $active__color;
+  }
+
+  .sidebar__checkbox-wrapper:hover .sidebar__checkbox + .sidebar__label {
+    border-color: $active__color;
+    color: $active__color;
+  }
+
+  &__checkbox:focus + .sidebar__label::before {
+    box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+  }
+
+
+  &__box {
+    margin-right: 12px;
+  }
+
+  &__text {
+    color: $dark;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-left: 23px;
+    letter-spacing: 0.03em;
+  }
+
+  .irs--flat {
+    padding-top: 20px;
+    height: 40px;
+  }
+
+  .irs--flat .irs-line {
+    top: 23px;
+    height: 2px;
+  }
+
+  .irs--flat .irs-bar {
+    top: 43px;
+    height: 2px;
+    background-color: #FF6838;
+  }
+
+  .irs--flat .irs-handle {
+    top: 35px;
+    width: 18px;
+    height: 18px;
+    background-color: #FF6838;
+    border-radius: 100%;
+  }
+  
+  .irs--flat .irs-handle>i:first-child {
+    width: 0;
+  }
+
+  .irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single {
+    display: none;
+  }
+}
+
+.sidebar-price {
+
+  &__form {
+    padding: 35px 0 16px;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    color: $gray;
+  }
+
+  &__num {
+    padding: 12px 20px;
+    background-color: #FAEDED;
+    border-radius: 3px;
+    margin: 0 5px;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    color: $dark;
+  }
+
+  &__to {
+    padding: 12px 16px;
+    background-color: #FAEDED;
+    border-radius: 3px;
+    margin: 0 5px;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    color: $dark;
+  }
+
+  &__input {
+    padding-top: 100px;
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__arrows {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FAEDED;
+  }
+
+  &__svg--left {
+    opacity: 0.2;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    border-radius: 3px;
+    margin: 0 6px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FAEDED;
+
+    @include mq('phone') {
+      
+      &:nth-child(2) {
+        display: none;
+      }
+      &:nth-child(4) {
+        display: none;
+      }
+    }
+
+    &:hover {
+      background-color: $active__color;
+
+      .pagination__link {
+        color: $white;
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px #FF6838;
+    }
+
+    &:active {
+      box-shadow: inset 0 -1px 4px 2px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  &__item--active {
+    border: 1px solid $blue-dark;
+  }
+
+  &__link {
+
+    &:focus {
+      padding: 14px 20px;
+      border-radius: 3px;
+      box-shadow: 0 0 0 2px #FF6838;
+
+    }
+  }
+}
+
+.promotions {
+
+  &__title {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.3;
+    color: $blue-dark;
+    margin-bottom: 60px;
+
+    @include mq('desktop') {
+      text-align: center;
+    }
+
+    @include mq('phone') {
+      font-size: 24px;
+      padding-top: 25px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    @include mq('desktop') {
+      justify-content: center;
+    }
+
+    @include mq('phone') {
+      padding-right: 10px;
+    }
+  }
+
+  &__item {
+    max-width: 370px;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+
+      @include mq('desktop') {
+        margin-bottom: 20px;
+      }
+
+      @include mq('phone') {
+        margin-right: 0;
+        margin-bottom: 0;
+      }
+    }
+    
+    @include mq('phone') {
+      width: 100%;
+      padding-bottom: 3px;
+    }
+  }
+
+  &__img {
+    margin-bottom: 0;
+  }
+
+  &__text {
+    display: inline-block;
+    color: $dark;
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 0;
+    margin-left: 0;    
+  }
+
+  &__content {
+    padding: 15px 20px;
+
+    @include mq('phone') {
+      padding: 35px 20px;
+    }
+  } 
+
+  .slick-dots {
+    padding-top: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & li {
+      width: 15px;
+      height: 15px;
+      background-color: $gray;
+      border-radius: 100%;
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+
+    .slick-active {
+      background-color: $active__color;
+    }
+
+    & button {
+      font-size: 0;
+    }
+  }
+
+  .slick-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

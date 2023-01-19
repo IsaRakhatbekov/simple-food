@@ -46,5 +46,53 @@ $(function() {
     }
   });
 
+  $('.sidebar-price__input').ionRangeSlider({
+    type: "double",
+    prefix: "$",
+    onStart: function (data) {
+      $('.sidebar-price__from').text(data.from);
+      $('.sidebar-price__to').text(data.to);
+    },
+    onChange: function (data) {
+      $('.sidebar-price__from').text(data.from);
+      $('.sidebar-price__to').text(data.to);
+    },
+  });
+
+  $('.select-style').styler();
+
+  $('.open-filter__btn').on('click', function(){
+    $('.open-filter').addClass('open-filter--active');
+    $('body').addClass('lock')
+  }); 
+
+  $('.open-filter__close').on('click', function(){
+    $('.open-filter').removeClass('open-filter--active');
+    $('body').removeClass('lock')
+  });
+
+  $(document).mouseup(function (e){
+    const close = $(".open-filter");
+    if(!close.is(e.target) && close.has(e.target).length === 0) {
+      $(".open-filter").removeClass("open-filter--active");
+      $("body").removeClass("lock")
+    }
+  });
+  
+
+  $(window).on('load resize', function() {
+    if ($(window).width() < 560) {
+      $('.promotions__list:not(.slick-initialized)').slick({
+        arrows: false,
+        dots: true,
+        speed: 300,
+        slidesToShow: 1,
+        infinite: false,
+      });
+    } else {
+      $(".promotions__list.slick-initialized").slick("unslick");
+    }
+  });
+
 })
 var mixer = mixitup('.popular__items');	

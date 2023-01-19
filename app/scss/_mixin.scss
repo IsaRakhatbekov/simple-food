@@ -17,7 +17,7 @@ $breakpoints: (
   "phone": 560px,
   "tablet": 768px,
   "laptop": 992px,
-  "desktop": 1150px
+  "desktop": 1180px
 );
 
 @mixin mq($width, $type: max) {

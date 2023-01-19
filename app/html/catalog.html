@@ -1,0 +1,421 @@
+@include('components/_head.html')
+
+  @include('components/_catalog-header.html')
+
+  <main class="main">
+    <section class="breadcrumbs">
+      <div class="container">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">
+              Главная
+            </a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link">
+              Каталог товаров
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="catalog">
+      <div class="container">
+        <div class="catalog__top">  
+
+            <h2 class="catalog__title">Каталог продуктов</h2>
+
+            <div class="catalog__buttons">
+              <button class="open-filter__btn">
+                <span class="sr-only">Открыть фильтр</span>
+                <svg class="open-filter__svg" width="32" height="36">
+                  <use xlink:href="images/sprite.svg#icon-open-filter"></use>
+                </svg>
+              </button>
+            
+              <form class="catalog__form" action="#">
+                  <select class="catalog__select-name select-style">
+                  <option value="">По названию</option>
+                  <option value="">Бифбургер</option>
+                  <option value="">Королевский чизбургер</option>
+                  <option value="">Черный гамбургер</option>
+                  </select>
+                  <select class="catalog__select-number select-style">
+                  <option value="">по 12</option>
+                  <option value="">2</option>
+                  <option value="">3</option>
+                  <option value="">4</option>
+                  <option value="">5</option>
+                  <option value="">6</option>
+                  <option value="">7</option>
+                  <option value="">8</option>
+                  <option value="">9</option>
+                  <option value="">10</option>
+                  <option value="">11</option>
+                  <option value="">12</option>
+                  </select>
+              </form>
+            </div>
+        </div>
+
+        <div class="catalog__inner">
+
+          <ul class="sidebar">
+            <li class="sidebar__bloks">
+              <h3 class="sidebar__title">Категории</h3>
+
+              <ul class="sidebar__nav">
+                <li class="sidebar__item">
+                  <a class="sidebar__link animation sidebar__link--active" href="#">Бургеры</a>
+                </li>
+                <li class="sidebar__item">
+                  <a class="sidebar__link animation" href="#">Пицца</a>
+                </li>
+                <li class="sidebar__item">
+                  <a class="sidebar__link animation" href="#">Сендвичи</a>
+                </li>
+                <li class="sidebar__item">
+                  <a class="sidebar__link animation" href="#">Азиатская кухня</a>
+                </li>
+                <li class="sidebar__item">
+                  <a class="sidebar__link animation" href="#">Сеты</a>
+                </li>
+                <li class="sidebar__item">
+                  <a class="sidebar__link animation" href="#">Европейская кухня</a>
+                </li>
+                <li class="sidebar__item">
+                  <a class="sidebar__link animation" href="#">Напитки</a>
+                </li>
+                <li class="sidebar__item">
+                  <a class="sidebar__link animation" href="#">Алкоголь</a>
+                </li>
+              </ul>
+
+            </li>
+
+            <li class="sidebar__bloks">
+              <h3 class="sidebar__title">Предложения</h3>
+
+              <div class="sidebar__checkbox-wrapper">
+                <input class="sidebar__checkbox" type="checkbox" id="check" name="check" value="yes">
+                <label class="sidebar__label" for="check">Со скидкой</label>
+              </div>
+
+              <div class="sidebar__checkbox-wrapper">
+                <input class="sidebar__checkbox" type="checkbox" id="check-second" name="check" value="yes">
+                <label class="sidebar__label" for="check-second">Новинка</label>
+              </div>
+
+              <div class="sidebar__checkbox-wrapper">
+                <input class="sidebar__checkbox" type="checkbox" id="check-third" name="check" value="yes">
+                <label class="sidebar__label" for="check-third">Хит</label>
+              </div>
+              
+            </li>
+
+            <li class="sidebar__bloks sidebar-price">
+              <h3 class="sidebar__title">Цена</h3>
+
+              <form class="sidebar-price__form" action="#">
+                <label class="sidebar-price__label">
+                  
+                  <div class="sidebar-price__label-inner">
+                    <span class="sidebar-price__text">от</span><span class="sidebar-price__from sidebar-price__num"></span><span class="sidebar-price__text">₴</span>
+                  </div>
+
+
+                  <div class="sidebar-price__label-inner">
+                    <span class="sidebar-price__text">до</span><span class="sidebar-price__to"></span><span class="sidebar-price__text">₴</span>
+                  </div>
+
+                </label>
+
+                <input class="sidebar-price__input" type="text" 
+                data-min="0"
+                data-max="1150"
+                data-from="100"
+                data-to="1000">
+              </form>
+            </li>
+          </ul>
+
+          <div class="open-filter">
+            <div class="open-filter__top">
+              <button class="open-filter__close">
+                <svg class="open-filter__close-svg" width="20" height="20">
+                  <use xlink:href="images/sprite.svg#icon-close"></use>
+                </svg>
+              </button>
+            </div>
+
+            <ul class="sidebar">
+              <li class="sidebar__bloks">
+                <h3 class="sidebar__title">Категории</h3>
+  
+                <ul class="sidebar__nav">
+                  <li class="sidebar__item">
+                    <a class="sidebar__link animation sidebar__link--active" href="#">Бургеры</a>
+                  </li>
+                  <li class="sidebar__item">
+                    <a class="sidebar__link animation" href="#">Пицца</a>
+                  </li>
+                  <li class="sidebar__item">
+                    <a class="sidebar__link animation" href="#">Сендвичи</a>
+                  </li>
+                  <li class="sidebar__item">
+                    <a class="sidebar__link animation" href="#">Азиатская кухня</a>
+                  </li>
+                  <li class="sidebar__item">
+                    <a class="sidebar__link animation" href="#">Сеты</a>
+                  </li>
+                  <li class="sidebar__item">
+                    <a class="sidebar__link animation" href="#">Европейская кухня</a>
+                  </li>
+                  <li class="sidebar__item">
+                    <a class="sidebar__link animation" href="#">Напитки</a>
+                  </li>
+                  <li class="sidebar__item">
+                    <a class="sidebar__link animation" href="#">Алкоголь</a>
+                  </li>
+                </ul>
+  
+              </li>
+  
+              <li class="sidebar__bloks">
+                <h3 class="sidebar__title">Предложения</h3>
+  
+                <form class="sidebar__form" action="#">
+                  <label class="sidebar__label">
+                    <div class="sidebar__box">
+                      <input class="sidebar__input" type="checkbox">
+                      <span class="sidebar__checkbox sidebar__checkbox--first"></span>
+                    </div>
+                    <span class="sidebar__text">Со скидкой</span>
+                  </label>
+                  
+                  <label class="sidebar__label">
+                    <div class="sidebar__box">
+                      <input class="sidebar__input" type="checkbox">
+                      <span class="sidebar__checkbox sidebar__checkbox--second"></span>
+                    </div>
+                    <span class="sidebar__text">Новинка</span>
+                  </label>
+  
+                  <label class="sidebar__label">
+                    <div class="sidebar__box">
+                      <input class="sidebar__input" type="checkbox">
+                      <span class="sidebar__checkbox sidebar__checkbox--third"></span>
+                    </div>
+                    <span class="sidebar__text">Хит</span>
+                  </label>
+                </form>
+                
+              </li>
+  
+              <li class="sidebar__bloks sidebar-price">
+                <h3 class="sidebar__title">Цена</h3>
+  
+                <form class="sidebar-price__form" action="#">
+
+                  <label class="sidebar-price__label">
+                    <div class="sidebar-price__label-inner">
+                      <span class="sidebar-price__text">от</span><span class="sidebar-price__from sidebar-price__num"></span><span class="sidebar-price__text">₴</span>
+                    </div>
+                    <div class="sidebar-price__label-inner">
+                      <span class="sidebar-price__text">до</span><span class="sidebar-price__to"></span><span class="sidebar-price__text">₴</span>
+                    </div>
+                  </label>
+  
+                  <input class="sidebar-price__input" type="text" data-min="0" data-max="1150" data-from="100" data-to="1000">
+                </form>
+              </li>
+            </ul>
+          </div>
+
+          <div class="catalog__content">
+
+            <ul class="catalog__items">
+
+              <li class="catalog__bloks">
+                <article class="product-cart catalog-carts">
+                  <img class="product-cart__img catalog-carts__img" width="140" height="140" src="images/popular/cheese-b.png" alt="Чизбургер">
+                  <h3 class="product-cart__title catalog-carts__title">Чизбургер с листьями салата</h3>
+                  <span class="product-cart__price catalog-carts__price">160 грн.</span>
+                  <button class="product-cart__btn catalog-carts__btn def-btn" type="button">В корзину</button>
+                </article>
+              </li>
+              <li class="catalog__bloks">
+                <article class="product-cart catalog-carts">
+                  <img class="product-cart__img catalog-carts__img" width="140" height="140" src="images/popular/beaf-b.png" alt="Чизбургер">
+                  <h3 class="product-cart__title catalog-carts__title">Бифбургер</h3>
+                  <span class="product-cart__price catalog-carts__price">160 грн.</span>
+                  <button class="product-cart__btn catalog-carts__btn def-btn" type="button">В корзину</button>
+                </article>
+              </li>
+              <li class="catalog__bloks">
+                <article class="product-cart catalog-carts">
+                  <img class="product-cart__img catalog-carts__img" width="140" height="140" src="images/popular/royal.png" alt="Чизбургер">
+                  <h3 class="product-cart__title catalog-carts__title">Королевский чизбургер</h3>
+                  <span class="product-cart__price catalog-carts__price">160 грн.</span>
+                  <button class="product-cart__btn catalog-carts__btn def-btn" type="button">В корзину</button>
+                </article>
+              </li>
+              <li class="catalog__bloks">
+                <article class="product-cart catalog-carts">
+                  <img class="product-cart__img catalog-carts__img" width="140" height="140" src="images/popular/black-b.png" alt="Чизбургер">
+                  <h3 class="product-cart__title catalog-carts__title">Черный гамбургер</h3>
+                  <span class="product-cart__price catalog-carts__price">160 грн.</span>
+                  <button class="product-cart__btn catalog-carts__btn def-btn" type="button">В корзину</button>
+                </article>
+              </li>
+              <li class="catalog__bloks">
+                <article class="product-cart catalog-carts">
+                  <img class="product-cart__img catalog-carts__img" width="140" height="140" src="images/popular/cheese-b.png" alt="Чизбургер">
+                  <h3 class="product-cart__title catalog-carts__title">Чизбургер с листьями салата</h3>
+                  <span class="product-cart__price catalog-carts__price">160 грн.</span>
+                  <button class="product-cart__btn catalog-carts__btn def-btn" type="button">В корзину</button>
+                </article>
+              </li>
+              <li class="catalog__bloks">
+                <article class="product-cart catalog-carts">
+                  <img class="product-cart__img catalog-carts__img" width="140" height="140" src="images/popular/beaf-b.png" alt="Чизбургер">
+                  <h3 class="product-cart__title catalog-carts__title">Бифбургер</h3>
+                  <span class="product-cart__price catalog-carts__price">160 грн.</span>
+                  <button class="product-cart__btn catalog-carts__btn def-btn" type="button">В корзину</button>
+                </article>
+              </li>
+
+              <li class="catalog__bloks">
+                <article class="product-cart catalog-carts">
+                  <img class="product-cart__img catalog-carts__img" width="140" height="140" src="images/popular/royal.png" alt="Чизбургер">
+                  <h3 class="product-cart__title catalog-carts__title">Королевский чизбургер</h3>
+                  <span class="product-cart__price catalog-carts__price">160 грн.</span>
+                  <button class="product-cart__btn catalog-carts__btn def-btn" type="button">В корзину</button>
+                </article>
+              </li>
+              <li class="catalog__bloks">
+                <article class="product-cart catalog-carts">
+                  <img class="product-cart__img catalog-carts__img" width="140" height="140" src="images/popular/black-b.png" alt="Чизбургер">
+                  <h3 class="product-cart__title catalog-carts__title">Черный гамбургер</h3>
+                  <span class="product-cart__price catalog-carts__price">160 грн.</span>
+                  <button class="product-cart__btn catalog-carts__btn def-btn" type="button">В корзину</button>
+                </article>
+              </li>
+              <li class="catalog__bloks">
+                <article class="product-cart catalog-carts">
+                  <img class="product-cart__img catalog-carts__img" width="140" height="140" src="images/popular/cheese-b.png" alt="Чизбургер">
+                  <h3 class="product-cart__title catalog-carts__title">Чизбургер с листьями салата</h3>
+                  <span class="product-cart__price catalog-carts__price">160 грн.</span>
+                  <button class="product-cart__btn catalog-carts__btn def-btn" type="button">В корзину</button>
+                </article>
+              </li>
+              <li class="catalog__bloks">
+                <article class="product-cart catalog-carts">
+                  <img class="product-cart__img catalog-carts__img" width="140" height="140" src="images/popular/beaf-b.png" alt="Чизбургер">
+                  <h3 class="product-cart__title catalog-carts__title">Бифбургер</h3>
+                  <span class="product-cart__price catalog-carts__price">160 грн.</span>
+                  <button class="product-cart__btn catalog-carts__btn def-btn" type="button">В корзину</button>
+                </article>
+              </li>
+              <li class="catalog__bloks">
+                <article class="product-cart catalog-carts">
+                  <img class="product-cart__img catalog-carts__img" width="140" height="140" src="images/popular/royal.png" alt="Чизбургер">
+                  <h3 class="product-cart__title catalog-carts__title">Королевский чизбургер</h3>
+                  <span class="product-cart__price catalog-carts__price">160 грн.</span>
+                  <button class="product-cart__btn catalog-carts__btn def-btn" type="button">В корзину</button>
+                </article>
+              </li>
+              <li class="catalog__bloks">
+                <article class="product-cart catalog-carts">
+                  <img class="product-cart__img catalog-carts__img" width="140" height="140" src="images/popular/black-b.png" alt="Чизбургер">
+                  <h3 class="product-cart__title catalog-carts__title">Черный гамбургер</h3>
+                  <span class="product-cart__price catalog-carts__price">160 грн.</span>
+                  <button class="product-cart__btn catalog-carts__btn def-btn" type="button">В корзину</button>
+                </article>
+              </li>
+
+            </ul>
+
+            <div class="pagination">
+              <a class="pagination__arrows">
+                <svg class="pagination__svg  pagination__svg--left" width="10" height="18">
+                  <use xlink:href="images/sprite.svg#icon-left"></use>
+                </svg>
+              </a>
+
+              <ul class="pagination__list">
+                <li class="pagination__item pagination__item--active">
+                  <a class="pagination__link" href="#">1</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#">2</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#">...</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#">9</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#">10</a>
+                </li>
+              </ul>
+
+              <a class="pagination__arrows" href="#">
+                <svg class="pagination__svg  pagination__svg--righ" width="10" height="18">
+                  <use xlink:href="images/sprite.svg#icon-right"></use>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+          
+        </div>
+
+      </div>
+    </section>
+    @include('components/_app.html')
+    <section class="promotions section">
+      <div class="container">
+        <h2 class="promotions__title">Акции и скидки</h2>
+
+        <div class="promotions__wrapper">
+          <ul class="promotions__list">
+
+            <li class="promotions__item">
+              <article class="food">
+                <img class="food__img promotions__img" width="375" height="304" src="images/food/blaze-p.jpg" alt="Пицца Блейз">
+                <div class="food__content promotions__content">
+                  <span class="food__title promotions__text">Скидка 50% на вторую пиццу</span>
+                </div>
+              </article>
+            </li>
+
+            <li class="promotions__item">
+              <article class="food">
+                <img class="food__img promotions__img" width="375" height="304" src="images/food/kfc.jpg" alt="Кфс">
+                <div class="food__content promotions__content">
+                  <span class="food__title promotions__text">Картошечка из KFC даром при заказе бургера</span>
+                </div>
+              </article>
+            </li>
+
+            <li class="promotions__item">
+              <article class="food">
+                <img class="food__img promotions__img" width="375" height="304" src="images/food/star-b.jpg" alt="Бургер Звезда">
+                <div class="food__content promotions__content">
+                  <span class="food__title promotions__text">Чёрные бургеры на чёрный день </span>
+                </div>
+              </article>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  @include('components/_footer.html')
+
+@include('components/_footer-script.html')
