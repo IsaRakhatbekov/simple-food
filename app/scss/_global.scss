@@ -15,9 +15,11 @@ body {
 .lock {
   overflow-y: hidden;
   position: relative;
+
   &::after {
     content: '';
     position: absolute;
+    z-index: 10;
     left: 0;
     right: 0;
     top: 0;
@@ -38,7 +40,6 @@ body {
 
 .section {
   padding: 60px 0;
-
 
   @include mq('tablet') {
     padding: 50px 0;
@@ -84,12 +85,12 @@ body {
 }
 
 .def-btn {
-  letter-spacing: 0.03em;
+  color: #fff;
+  font-size: 18px;
+  line-height: 130%;
   border-radius: 6px;
   padding: 12px 32px;
-  line-height: 130%;
-  font-size: 18px;
-  color: #fff;
+  letter-spacing: 0.03em;
   background-color: $active__color;
   transition: background-color 0.3s, color 0.3s, border-radius 0.3s, box-shadow 0.3s;
 
@@ -111,25 +112,25 @@ body {
 }
 
 .sr-only {
-  position: absolute;
+  border: 0;
+  padding: 0;
   width: 1px;
   height: 1px;
   margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
   overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
 }
 
 .breadcrumbs {
   background-color: rgba(255, 122, 80, 0.1);
 
   &__list {
+    padding: 24px 0;
     display: flex;
     align-items: center;
-    padding: 24px 0;
 
     @include mq('phone') {
       padding: 28px 0;
@@ -137,27 +138,34 @@ body {
   }
 
   &__item {
-    color: #505050;
     padding-right: 18px;
+    color: #505050;
     position: relative;
 
     &::after {
       content: "";
       position: absolute;
-      top: 4px;
+      top: 6px;
       right: 3px;
       width: 11px;
       height: 11px;
       opacity: 0.2;
       background-repeat: no-repeat;
-      background-image: url('../images/sprite.svg#icon-right');
+      background-image: url('../images/sprite.svg#icon-promotions_arrow');
     }
 
     &:last-child {
-      color: $active__color;
       padding-right: 0;
+      color: $active__color;
 
       &::after {
+        display: none;
+      }
+    }
+
+    @include mq('phone') {
+
+      &:nth-child(2) {
         display: none;
       }
     }
@@ -169,4 +177,8 @@ body {
     line-height: 1.2;
     letter-spacing: 0.03em;
   }
+}
+
+.jq-ry-container>.jq-ry-group-wrapper>.jq-ry-group.jq-ry-rated-group {
+  z-index: 10;
 }

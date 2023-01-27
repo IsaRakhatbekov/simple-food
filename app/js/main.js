@@ -78,7 +78,6 @@ $(function() {
       $("body").removeClass("lock")
     }
   });
-  
 
   $(window).on('load resize', function() {
     if ($(window).width() < 560) {
@@ -94,5 +93,103 @@ $(function() {
     }
   });
 
+  $('.order__slider').slick({
+    prevArrow: '<button type="button" class="order__arrow order__arrow-prev"> <svg class="order__svg"><use xlink:href="images/sprite.svg#icon-order-left"></use></svg> </button>',
+    nextArrow: '<button type="button" class="order__arrow order__arrow-next"> <svg class="order__svg"><use xlink:href="images/sprite.svg#icon-order-right"></use></svg> </button>',
+  });
+
+  $(".star").rateYo({
+    spacing   : "5px",
+    starWidth: "16px",
+    readOnly: true,
+    normalFill: "#C1C1C14D",
+    ratedFill: "#FFB800",
+  });
+
+  $(".tab-form__star").rateYo({
+    spacing   : "5px",
+    starWidth: "16px",
+    normalFill: "#cecece",
+    ratedFill: "#FFB800",
+  });
+
+  $('.interesting__slider').slick({
+    slidesToShow: 5,
+    waitForAnimate: false,
+    prevArrow: '<button type="button" class="interesting__arrow interesting__arrow-prev"> <svg class="interesting__svg"><use xlink:href="images/sprite.svg#icon-order-left"></use></svg> </button>',
+    nextArrow: '<button type="button" class="interesting__arrow interesting__arrow-next"> <svg class="interesting__svg"><use xlink:href="images/sprite.svg#icon-order-right"></use></svg> </button>',
+    
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          arrows: false,
+          dots: true,
+        }
+      },
+      {
+        breakpoint: 560,
+        settings: {
+          slidesToShow: 2,
+          arrows: false,
+          dots: true,
+        }
+      }
+    ]
+  });
+
+  $('.tab__links').on('click', function(e){
+    e.preventDefault();
+    $('.tab__links').removeClass('tab__links--active');
+    $(this).addClass('tab__links--active');
+
+    $('.tab__block').removeClass('tab__block--active');
+    $($(this).attr('href')).addClass('tab__block--active');
+  });
+
+  $('.popup__list').slick({
+    waitForAnimate: false,
+    dots: true,
+    prevArrow: '<button type="button" class="popup__arrow popup__arrow-prev"> <svg class="popup__svg"><use xlink:href="images/sprite.svg#icon-order-left"></use></svg> </button>',
+    nextArrow: '<button type="button" class="popup__arrow popup__arrow-next"> <svg class="popup__svg"><use xlink:href="images/sprite.svg#icon-order-right"></use></svg> </button>',
+  });
+
 })
+
+const counters = document.querySelectorAll('[data-counter]');
+
+if(counters) {
+  counters.forEach(counter => {
+    counter.addEventListener('click', e => {
+      const target = e.target;
+
+      if(target.closest('.counter__button')) {
+        let value = parseInt(target.closest('.counter').querySelector('input').value);
+
+        if (target.classList.contains('counter__button-plus')) {
+          value++;
+        } else{
+          --value;
+        }
+
+        if (value <= 0) {
+          value = 0;
+          target.closest('.counter').querySelector('.counter__button-minus').classList.add('disabled')
+        } else {
+          target.closest('.counter').querySelector('.counter__button-minus').classList.remove('disabled')
+        }
+
+        target.closest('.counter').querySelector('input').value = value;
+      }
+    })
+  })
+}
+
 var mixer = mixitup('.popular__items');	
