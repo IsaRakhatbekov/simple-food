@@ -1808,7 +1808,24 @@
       &__form {
         padding-top: 25px;
       }
+
+      &__box {
+        margin-right: 0;
+      }
+
+      &__input {
+        width: 0;
+        height: 0;
+        -webkit-appearance: none;
+        appearance: none;
+        position: absolute;
+      }
+
+      &__text {
+        margin-left: 15px;
+      }
     }
+
   }
 }
 
